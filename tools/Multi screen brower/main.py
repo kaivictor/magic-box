@@ -51,7 +51,7 @@ def add_cursor(screenImg, bbox):
         # return (cursor, hotspot)
     else:
         # 使用默认鼠标样式
-        default_mouse_model = Image.open(r"D:\Studio\PyProgram\Project\desktopCopy\default_mouse_model.png")
+        default_mouse_model = Image.open(r"./default_mouse_model.png")
         cursor = default_mouse_model.resize((36, 36))
     # ratio = ctypes.windll.shcore.GetScaleFactorForDevice(0) / 100
     pos_win = win32gui.GetCursorPos()
@@ -79,7 +79,7 @@ class viewApp():
         self.screenWin.geometry(f'{MajorScreenWidth}x{MajorScreenHeight}')
         print(f"窗口初始大小: {MajorScreenWidth}x{MajorScreenHeight}")
         self.screenWin.minsize(600, 240)
-        self.video_lost_img = Image.open(r"D:\Studio\PyProgram\Project\desktopCopy\video_lost.png")
+        self.video_lost_img = Image.open(r"./video_lost.png")
         self.screenWin.bind('<Configure>', self.window_resize)
         # 添加右键菜单
         self.context_menu = tkinter.Menu(self.screenWin, tearoff=0)
